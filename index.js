@@ -1,3 +1,12 @@
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('.display');
+
+buttons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    display.textContent += event.target.value
+  });
+});
+
 function add(...addNums) {
   let plus = addNums.reduce((num1, num2) => (num1 + num2))
   return plus
