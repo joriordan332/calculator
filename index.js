@@ -1,11 +1,29 @@
 const buttons = document.querySelectorAll('button');
+const plus = document.getElementById('plus');
+const equals = document.getElementById('equals');
 const display = document.querySelector('.display');
+
+let displayResult = "";
+let num1 = "";
+let num2 = "";
 
 buttons.forEach(button => {
   button.addEventListener('click', (event) => {
-    display.textContent += event.target.value
+  if (event.target.value == '+' || event.target.value == '-' || event.target.value == '/' || event.target.value == '*' || event.target.value == '=') {
+    return false
+  } else {
+  displayResult = display.textContent += event.target.value; 
+  }
   });
 });
+
+
+plus.addEventListener('click', function(e){
+  operator = '+';
+  num1 = displayResult;
+  return num1;
+}) 
+
 
 function add(...addNums) {
   let plus = addNums.reduce((num1, num2) => (num1 + num2))
