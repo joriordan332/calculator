@@ -8,7 +8,7 @@ let displayResult = "";
 let num1 = "";
 let num2 = "";
 let operator = "";
-let operatorTwo = "";
+
 
 numbers.forEach(button => {
   button.addEventListener('click', (event) => {
@@ -21,8 +21,6 @@ numbers.forEach(button => {
       num2 = displayResult
   } if (num1 == null || num1 == ''){
       displayResult = display.textContent += event.target.value; 
-  } else if (num1 != "" && operator != "" && num2 != "") {
-    
   } 
   });
 });
@@ -32,16 +30,13 @@ operators.forEach(button => {
   button.addEventListener('click', (event) => {
     if (displayResult === "") {
       operator = "";
+    } if (operator === "" && displayResult != "") {
+        num1 = displayResult;
+    } if (num1 != "" && operator != "" && num2 != "") {
+        num1 = display.textContent = (operate(operator, num1, num2))
     }
-    if (operator === "" && displayResult != "") {
-      num1 = displayResult;
       operator = event.target.value;
-  } if (num1 != "" && operator != "" && num2 != "") {
-      displayResult =display.textContent = (operate(operator, num1, num2))
-      console.log(operate(operator, num1, num2))
-    }
    })
-
 })
 
 equalsButton.addEventListener('click', (event) => {
