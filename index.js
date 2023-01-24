@@ -21,7 +21,7 @@ numbers.forEach(button => {
       num2 = displayResult
   } if (num1 == null || num1 == ''){  // if num1 doesn't have a value then the textContent is whichever button is clicked
       displayResult = display.textContent += event.target.value; 
-  } if (num1 === "0" && operator === "/") {
+  } if (num1 === "0" && operator === "/") { // if user tries to divide 0 by anything display a snarky error message
     alert("Nice try");
     num1 = "";
     operator = "";
@@ -49,7 +49,7 @@ equalsButton.addEventListener('click', (event) => {
     displayResult = display.textContent
   } if (num1 != "" && operator != "" && num2 != "") {
   num2 = displayResult
-  display.textContent = (operate(operator, num1, num2))
+  display.textContent = (operate(operator, num1, num2)).toFixed(2)
   console.log(operate(operator, num1, num2))
   }
 })
