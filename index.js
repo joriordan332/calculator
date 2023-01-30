@@ -44,7 +44,7 @@ operators.forEach(button => {
         currentNum = display.textContent = (operate(operator, currentNum, previousNum))
     } 
       operator = event.target.value;
-      display.textContent = ""
+      display.textContent = "";
    })
 })
 
