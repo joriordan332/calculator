@@ -1,0 +1,96 @@
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#f3f1f1, #b8b5b5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.calculator { 
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 320px;
+  height: 350px;
+  border-radius: 25px;
+  background-color: black;
+  font-family: sans-serif;
+  padding: 10px;
+  
+  
+}
+.display {
+  height: 65px;
+  width: 300px;
+  border-radius: 25px;
+  color: white;
+  text-align: right;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  font-size: 50px;
+  
+}
+
+.operators {
+  display: flex;
+  flex-flow: column wrap;           
+  align-content: flex-end;
+  
+}
+
+.plus, .minus, .divide, .times, .equals {
+  background-color: orange;
+  color: white;
+  border: black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+}
+
+.numbers{
+  max-width: 175px;
+  
+}
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .decimal {
+  background-color: rgb(65, 65, 65);
+  color: white;
+  border: black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  margin: 2px;
+  
+}
+
+.zero {
+  background-color: rgb(65, 65, 65);
+  color: white;
+  border-radius: 25px;
+  border: black;
+  height: 50px;
+  width: 115px;
+  font-weight: bold;
+}
+
+.clear {
+width: 150px; 
+height: 50px;
+ 
+}
+.clearButton {
+  background-color:rgba(182, 179, 179, 0.966);
+  color: black;
+  border-radius: 50%;
+  border: black;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+}
+
+.divide, .times, .minus, .plus, .equals {
+  margin: 2px;
+}
