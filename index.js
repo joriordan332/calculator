@@ -2,8 +2,9 @@ const numbers = document.querySelectorAll('.numbers');
 const display = document.querySelector('.display');
 const operators = document.querySelectorAll('.operators');
 const equalsButton = document.querySelector('.equalsButton');
-const clear = document.querySelector('.clear');
+const clear = document.querySelector('.clearButton');
 const decimal = document.querySelector('.decimal')
+const clearLastDigit = document.querySelector('.clearLastDigit')
 
 let displayResult = "";
 let currentNum = "";
@@ -21,7 +22,8 @@ numbers.forEach(button => {
   } if (currentNum != "" && operator != "") { // if currentNum & the operator has a value then previousNum is assigned the value of the displayResult
       previousNum = displayResult
   } if (currentNum == null || currentNum == '' && display.textContent.length <= 8){  // if currentNum doesn't have a value then the textContent is whichever button is clicked
-      displayResult = display.textContent += event.target.value; 
+      currentNum += event.target.value;
+      display.textContent = currentNum
   } if (operator === "/" && previousNum === "0" ) { // if user tries to divide 0 by anything display a snarky error message
     alert("You can't divide by zero");
     currentNum = "";
@@ -29,7 +31,7 @@ numbers.forEach(button => {
     operator = "";
     display.textContent = "";
   }
-  });
+ });
 });
 
 operators.forEach(button => {
@@ -42,7 +44,7 @@ operators.forEach(button => {
         currentNum = display.textContent = (operate(operator, currentNum, previousNum))
     } 
       operator = event.target.value;
-      display.textContent = "";
+      
    })
 })
 
@@ -57,7 +59,7 @@ equalsButton.addEventListener('click', (event) => {
 })
 
 clear.addEventListener('click', (event) => {
-  display.textContent  = "";
+  display.textContent  = "0";
   currentNum = "";
   previousNum = "";
   operator = "";
@@ -70,6 +72,16 @@ decimal.addEventListener("click", () => {
 function addDecimal() {
   if (!display.textContent.includes(".")) {
     display.textContent += "."
+ }
+}
+clearLastDigit.addEventListener("click", () => {
+  lastDigit();
+});
+
+function lastDigit() {
+ if (display.textContent != "") {
+  displayResult = display.textContent.slice(0, -1);
+  display.textContent = displayResult;
  }
 }
 
